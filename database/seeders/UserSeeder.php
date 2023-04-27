@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Models\FeesAndFunding;
-use Faker\Factory;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class FeesAndFundingSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        FeesAndFunding::factory(5)->create();
+        User::factory(10)->create();
     }
 }

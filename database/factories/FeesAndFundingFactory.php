@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -17,7 +19,11 @@ class FeesAndFundingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'course_id' => 1,
+            'year' => '2023/2024',
+            'uk_full_time' => '£8000',
+            'uk_part_time' => '£890(per course module)',
+            'international_full_time' => '£16,500'
         ];
     }
 }

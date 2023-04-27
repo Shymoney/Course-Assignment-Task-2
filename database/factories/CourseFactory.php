@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,12 +25,11 @@ class CourseFactory extends Factory
             'uuid' => Str::uuid(),
             'subject_area' => $subjectArea[array_rand($subjectArea)],
             'course_name' => $this->faker->name,
-            'course_details' => '',
+            'course_details' => $this->faker->sentence,
             'level' => $level[array_rand($level)],
             'entry_requirement' => $this->faker->sentence,
             'location' => 'Waterside',
-            'starting' => $this->faker->monthName,
-
+            'starting' => 'September',
         ];
     }
 }
