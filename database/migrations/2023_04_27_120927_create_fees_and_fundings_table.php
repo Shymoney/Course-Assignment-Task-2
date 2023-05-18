@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fees_and_fundings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_id')->constrained()->restrictOnDelete();
+            $table->foreignId('course_id')->constrained()->cascadeOnDelete();
             $table->string('year');
             $table->string('uk_full_time')->nullable();
             $table->string('uk_part_time')->nullable();
