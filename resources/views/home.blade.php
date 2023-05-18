@@ -13,8 +13,9 @@
 
                     <div class="card-body">
                         @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong>{{ session('status') }}</strong>
                             </div>
                         @endif {{ __('You are logged in!') }}
                     </div>
