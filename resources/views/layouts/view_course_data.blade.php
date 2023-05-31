@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,9 +15,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!-- Scripts -->
-    @vite(['resources/css/theme-rtl.min.css', 'resources/js/bootstrap.js',  'resources/js/app.js'])
+    @vite([/*'resources/css/theme-rtl.min.css',*/ 'resources/js/bootstrap.js',  'resources/js/app.js'])
 
 </head>
 <body>
@@ -83,8 +86,6 @@
 
     </main>
 </div>
-{{--@vite(['resources/js/config.js', 'resources/js/feather.min.js', 'resources/js/imagesloaded.pkgd.min.js',--}}
-{{--'resources/js/list.min.js', 'resources/js/phoenix.js', 'resources/js/prism.js', 'resources/js/simplebar.min.js'])--}}
 
 </body>
 </html>

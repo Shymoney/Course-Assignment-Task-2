@@ -20,6 +20,7 @@ class FeesAndFundingFactory extends Factory
     {
         return [
             'course_id' => 1,
+            'course_uuid' => $this->faker->uuid(),
             'year' => '2023/2024',
             'uk_full_time' => '£8000',
             'uk_part_time' => '£890(per course module)',

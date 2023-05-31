@@ -30,6 +30,7 @@ Route::group([ 'prefix' => 'course', 'middleware' => ['auth:sanctum', 'verified'
     Route::get('view-course-data', [CourseController::class, 'index'])->name('view-course-data');
     Route::put('update', [CourseController::class, 'update'])->name('update');
     Route::post('{uuid}', [CourseController::class, 'destroy'])->name('deleteCourse');
+    Route::get('view-course-report/{uuid}', [CourseController::class, 'viewCourseReport'])->name('viewReport');
 
 
 });

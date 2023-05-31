@@ -55,26 +55,27 @@
                                     <td class="align-middle">{{ $data->location }}</td>
                                     <td class="align-middle">{{ $data->starting }}</td>
                                     <td class="align-middle white-space-nowrap text-end pe-0">
-                                        <div class="font-sans-serif btn-reveal-trigger position-static">
-                                            <div class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent">...
-                                                <div class="dropdown-menu dropdown-menu-end py-2">
-                                                    <a class="dropdown-item" href="#">View</a>
-
-                                                    <a class="dropdown-item" href="#">Generate Report</a>
-                                                </div>
-                                            </div>
-                                            <form action="{{ route('deleteCourse', ['uuid' => $data->uuid]) }}" method="POST">
-                                                @csrf
-                                                <button type="submit" class="btn text-danger">
-                                                    Delete
-                                                </button>
-                                            </form>
-
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Large modal</button>
-                                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        ...
+                                        <div class="mb-3">
+                                            <div class="input-group">
+                                                <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                                                <div class="dropdown-menu">
+                                                    <div class="dropdown-item">
+                                                        <button type="button" class="btn btn-link btn-sm">
+                                                            <a href="{{ route('viewReport', ['uuid' => $data->uuid]) }}"> View</a>
+                                                        </button>
+                                                    </div>
+                                                    <div class="dropdown-item align-self-start">
+                                                        <form action="{{ route('deleteCourse', ['uuid' => $data->uuid]) }}" method="POST">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-link btn-sm text-danger">
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <button type="button" class="btn btn-link btn-sm">
+                                                            <a href="#"> Generate Report</a>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

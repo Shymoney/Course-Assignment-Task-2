@@ -38,12 +38,22 @@ class CourseController extends Controller
         return view('view-course')->with(['courseData'=> $courseData]);
     }
 
+    public function getAll(): array|Collection
+    {
+        return FeesAndFunding::all();
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function viewCourseReport(string $courseUuid): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        //
+        $course = Course::where('uuid', '=', $courseUuid)->get();
+        $courseReportUuidValue = Course::where('uuid', '=', $courseUuid)->get()->value('uuid');
+        $feesFunding = FeesAndFunding::all()->where('course_uuid', '=', $courseReportUuidValue);
+
+        return view('view-report')->with(['course' => $course, 'feesFunding' => $feesFunding]);
     }
 
     /**
@@ -73,13 +83,14 @@ class CourseController extends Controller
             $feesFunding->international_full_time = $request->internationalFullTime;
 
             $feesFunding->feesAndFunding()->associate($courseData->id);
+            $feesFunding->course_uuid = $courseData->uuid;
             $feesFunding->save();
 
-            Session::flash('message','Course Data Successfully Uploaded');
+            Session::flash('message', 'Course Data Successfully Uploaded');
 
-            return back()->with('message','Course Data Successfully Uploaded');
+            return back()->with('message', 'Course Data Successfully Uploaded');
 
-        }catch (\Error $error) {
+        } catch (\Error $error) {
             throw new Exception($error->getMessage());
         }
     }

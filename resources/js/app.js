@@ -16,7 +16,11 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import ModalComponent from "./components/ModalComponent.vue";
+import HomeComponent from "./components/HomeComponent.vue";
 app.component('example-component', ExampleComponent);
+app.component('modal-component', ModalComponent);
+app.component('home-component', HomeComponent)
 
 /**
  * The following block of code may be used to automatically register your
